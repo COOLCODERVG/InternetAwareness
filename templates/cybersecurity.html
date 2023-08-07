@@ -1,0 +1,50 @@
+{%extends "index.html"%}
+<html>
+    <head>
+        
+        <title>Internet Safety</title><!--Sets the title of the page-->
+    </head>
+    <body>
+        {% block title %}
+            <h1>CYBERSECURITY</h1><!--Header of the page and visual title -->
+            <p></p><!--Subtitle of the website -->
+        {% endblock %}
+        
+            
+        {% block content %}
+        <div class = "wrapper">
+            <img src = "/static/cybersec.png">
+            <div class = "text-box">
+                <h2>What is Cybersecurity?</h2>
+                <p>Cybersecurity is the art of protecting networks, devices, and data from unauthorized access or criminal use and the practice of ensuring confidentiality, integrity, and availability of information.</p>
+            </div>
+        </div>
+        <section class = "types"><!--section where the differnt types of risks are -->
+            <h1>Ways To Improve Your Own Cybersecurity</h1>
+            <div class = "row">
+                <div class = "types-col">
+                    <p>Secure your networks by using VPN security.</p>
+                </div>
+                <div class = "types-col">
+                    <p>Use antivirus software and keep all software updated.</p>
+                </div>
+                <div class = "types-col"><!--column 3 talks about Cyberbullying -->
+                    <p>Enable Multi-Factor Authentication</p>
+                </div>
+            </div>
+        </section>
+        <br>
+        <br>
+        <h1 style = "text-align: center; font-size: 36px;">Why is this important?</h1>
+
+        <div class = "types-col1"><p>Cybersecurity is important because it protects all categories of data from theft and damage. This includes sensitive data, personally identifiable information (PII), protected health information (PHI), personal information, intellectual property, data, and governmental and industry information systems. Without a cybersecurity program, your organization cannot defend itself against data breach campaigns, which makes it an irresistible target for cybercriminals.
+        </p></div>
+        {% endblock %}
+    </body>
+</html>
+<script>
+$(".types-col").click(function() {
+  window.location = $(this).find("a").attr("href"); 
+  return false;
+});
+</script>

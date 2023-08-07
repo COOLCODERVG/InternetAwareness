@@ -1,0 +1,61 @@
+{% extends "index.html"%}
+<html>
+    <head>
+        
+        <title>Internet Safety</title><!--Sets the title of the page-->
+    </head>
+    <body>
+        {% block title %}
+            <h1>CYBERBULLYING</h1><!--Header of the page and visual title -->
+            <p></p><!--Subtitle of the website -->
+        {% endblock %}
+        
+            
+        {% block content%}
+        <div class = "wrapper">
+            <img src = "/static/cyber-bullying.png">
+            <div class = "text-box">
+                <h2>What is Cyberbullying?</h2>
+                <p>Cyber Bullying is a kind of bullying or harassment that is done online. This is done by actual people. The intention like always is to harm the person on the other side except this time through a screen.</p>
+            </div>
+        </div>
+        <section class = "types"><!--section where the differnt types of risks are -->
+            <h1>Signs Of Cyberbullying</h1>
+            <div class = "row">
+                <div class = "types-col">
+                    <p>Becomes upset, sad or angry during or after being online or using their phone.</p>
+                </div>
+                <div class = "types-col">
+                    <p>Refuses to go to school or expresses anger or dissatisfaction with a specific class or school in general.</p>
+                </div>
+                <div class = "types-col"><!--column 3 talks about Cyberbullying -->
+                    <p>Expresses reluctance or refuses to participate in activities previously enjoyed.</p>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "types-col">
+                    <p>Has an unexplained decline in grades.</p>
+                </div>
+                <div class = "types-col">
+                    <p>Increasingly reports symptoms of illness for which he or she wants to stay at home.</p>
+                </div>
+                <div class = "types-col"><!--column 3 talks about Cyberbullying -->
+                    <p>Withdraws from family or friends without any proper reason.</p>
+                </div>
+        </section>
+        <br>
+        <br>
+        <h1 style = "text-align: center; font-size: 36px;">Legal Penalties</h1>
+
+        <div class = "types-col1"><p>While there are no exact laws about facing legal charges for verbal or online abuse there are rights that are protected by the US Department of Education and Department of Justice. Cyber Bullying does have its own consequences. 
+        Although there are no strict laws pointing towards Cyber Bullying or verbal abuse online The School or District that you are going to however do have every right to give you the necessary punishment. Depending on the offense the school or district can also expel or suspend a student.
+        </p></div>
+        {%endblock%}
+    </body>
+</html>
+<script>
+$(".types-col").click(function() {
+  window.location = $(this).find("a").attr("href"); 
+  return false;
+});
+</script>

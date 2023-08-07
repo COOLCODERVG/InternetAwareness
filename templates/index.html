@@ -1,0 +1,353 @@
+<html>
+
+<head>
+    {% block style %}
+    <style>
+        * {
+            /* Sets the general styling for the whole website */
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        footer{
+            height: 200px;
+        }
+
+        body {
+            background-color: #fff;
+        }
+        .links{
+            margin-left: 200px;
+        }
+        
+        .resources{
+            margin-right: 200px;
+        }
+        .banner {
+            /* Sets the styling for the banner section of the website*/
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/static/background.jpg");
+            /* Sets the background image of the banner*/
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Start of Styling of the navigation bar and all items in side of navigation bar */
+        .logo {
+            /* Sets the styling of the logo in the website */
+            width: 120px;
+            cursor: pointer;
+        }
+
+        .navbar {
+            /* Sets the styling of the navigation bar of the website */
+            width: 85%;
+            margin: auto;
+            padding: 35px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Sets the styling of the items in the navigation bar of the website */
+        .navbar ul li {
+            list-style: none;
+            display: inline-block;
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .navbar ul li::after {
+            content: '';
+            height: 3px;
+            width: 0%;
+            background: #009688;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            transition: 0.5s;
+        }
+
+        .navbar ul li:hover::after {
+            width: 100%;
+        }
+
+        /* End of styling of navigation bar */
+
+        .content {
+            /* Sets the styling of the navigation bar of the website */
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            color: #fff;
+            font-weight: 800px;
+        }
+
+
+
+        .content p {
+            /* Sets the styling of the p tags in the content section of the banner */
+            margin: 20px auto;
+            font-weight: 100;
+            line-height: 25px;
+            color: #fff;
+        }
+
+        .types {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+
+        .types h1 {
+            font-size: 36px;
+            font-weight: 600;
+            color: #000000;
+        }
+
+        .types p {
+            color: #777;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 22px;
+            padding: 10px;
+        }
+
+        .row {
+            margin-top: 5%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .types-col {
+            flex-basis: 31%;
+            background: #fff3f3;
+            border-radius: 10px;
+            margin-bottom: 1%;
+            padding: 10px 12px;
+            box-sizing: border-box;
+            transition: 0.5s;
+        }
+
+        .types-col p {
+            font-size: 18;
+        }
+
+        .types h3 {
+            text-align: center;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+
+        .types-col:hover {
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        .types-col1:hover {
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        .types-col1 {
+            flex-basis: 31%;
+            background: #fff3f3;
+            border-radius: 10px;
+            margin-bottom: 1%;
+            font-size: 25px;
+            padding: 10px 12px;
+            box-sizing: border-box;
+            transition: 0.5s;
+            margin: 75px;
+            height: 200px;
+            color: #777;
+            text-align: center;
+        }
+
+        .types-col1 p {
+            margin: 50px;
+            ;
+            text-align: center;
+            font-size: 18;
+            color: #777;
+        }
+
+        .wrapper {
+            margin: 150px auto;
+            width: 70%;
+        }
+
+        footer {
+            background-color: #111;
+        }
+
+        .site-footer {
+            background-color: #26272b;
+            padding: 45px 0 20px;
+            font-size: 15px;
+            line-height: 24px;
+            color: #737373;
+        }
+
+        .site-footer h6 {
+            color: #fff;
+            font-size: 16px;
+            text-transform: uppercase;
+            margin-top: 5px;
+            letter-spacing: 2px
+        }
+
+        .site-footer a {
+            color: #737373;
+        }
+
+        .site-footer a:hover {
+            color: #3366cc;
+            text-decoration: none;
+        }
+
+        .footer-links {
+            padding-left: 0;
+            list-style: none
+        }
+
+        .footer-links li {
+            display: block
+        }
+
+        .footer-links a {
+            color: #737373
+        }
+
+        .footer-links a:active,
+        .footer-links a:focus,
+        .footer-links a:hover {
+            color: #3366cc;
+            text-decoration: none;
+        }
+
+        .footer-links.inline li {
+            display: inline-block
+        }
+
+        .site-footer {
+            padding-bottom: 0
+        }
+
+        img {
+            max-width: 500px;
+            float: left;
+            border: 3px solid #000000;
+            border-radius: 10px;
+            margin-right: 15px;
+        }
+
+        .text-box {
+            color: #000000;
+        }
+
+        .text-box h2 {
+            font-size: 42px;
+        }
+
+        .text-box p {
+            font-size: 16px;
+            color: #000000;
+        }
+    </style>{% endblock %}
+    <title>Internet Safety</title><!--Sets the title of the page-->
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+<body>
+    <div class='banner'>
+        <div class='navbar'>
+            <ul>
+                <li><a href="/">Home</a></li><!--Sets the link of the Home navigation bar item -->
+                <li><a href="/cyberbullying">Cyberbullying</a></li>
+                <!--Sets the link of the Our Team navigation bar item -->
+                <li><a href="/identitytheft">Identity Theft</a></li>
+                <!--Sets the link of the CyberSecurity Help navigation bar item-->
+                <li><a href="/cybersecurity">Cybersecurity</a></li>
+                <!--Sets the link of the CyberSecurity Help navigation bar item-->
+            </ul>
+        </div>
+
+        <div class='content'>
+            {% block title %}
+            <h1>INTERNET SAFETY</h1><!--Header of the page and visual title -->
+            <p>An important part of life that many of us are unaware of.</p><!--Subtitle of the website -->
+            {% endblock %}
+        </div>
+    </div>
+    {% block content%}
+    <section class="types"><!--section where the differnt types of risks are -->
+        <h1>Types of Internet Risks</h1>
+        <p>Click on a topic below to learn more about it.</p>
+        <div class="row">
+            <div class="types-col" onclick="location.href='/cyberbullying'">
+                <h3>Cyberbullying</h3>
+                <p>Cyber Bullying is a kind of bullying or harassment that is done online. This is done by actual
+                    people. The intention like always is to harm the person on the other side except this time through a
+                    screen.</p>
+            </div>
+            <div class="types-col" onclick="location.href='/identitytheft'"><!--column 2 talks about Identity Theft -->
+                <h3>Identity Theft</h3>
+                <p>Identity Theft is the fraudulent acquisition and use of a person's private identifying information,
+                    usually for financial gain.</p>
+            </div>
+            <div class="types-col" onclick="location.href='/cybersecurity'"><!--column 3 talks about Cyberbullying -->
+                <h3>Cybersecurity</h3>
+                <p>Cybersecurity is the prevention or security of sensitive data that is stored within electronic
+                    devices.</p>
+            </div>
+        </div>
+    </section>
+    {% endblock %}
+    <br>
+    <br>
+    <br>
+    <footer class="site-footer">
+        <div class="container" >
+            <div class="row">
+                <div class="links">
+                    <h6>Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/cyberbullying">Cyber Bullying</a></li>
+                        <li><a href="/identitytheft">Identity Theft</a></li>
+                        <li><a href="/cybersecurity">Cyber Security</a></li>
+                    </ul>
+                </div>
+
+                <div class="resourses">
+                    <h6>Resourses</h6>
+                    <ul class="footer-links">
+                        <li><a href="https://cso.cyberhandbook.org/">Cyber Security HandBook</a></li>
+                        <li><a href="https://www.stopbullying.gov/resources/get-help-now">Get Bullying Help</a></li>
+                        <li><a href="https://www.fdic.gov/consumers/privacy/idtheft.pdf">Identity Theft Handbook</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+</body>
+
+</html>
+<script>
+    $(".types-col").click(function () {
+        window.location = $(this).find("a").attr("href");
+        return false;
+    });
+</script>

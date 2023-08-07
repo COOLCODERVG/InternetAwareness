@@ -1,0 +1,62 @@
+{% extends "index.html" %}
+<html>
+    <head>
+        <title>Internet Safety</title><!--Sets the title of the page-->
+        
+    </head>
+    <body>
+                {% block title %}
+                <h1>IDENTITY THEFT</h1><!--Header of the page and visual title -->
+                <p></p><!--Subtitle of the website -->
+                {% endblock %}
+        
+            
+                {% block content %} 
+        <div class = "wrapper">
+            <img src = "/static/identity.png">
+            <div class = "text-box">
+                <h2>What is Identity Theft?</h2>
+                <p>Identity theft occurs when someone steals your personal information and uses it to take your money, open credit accounts, file tax returns, make health insurance claims and more without your consent. Fortunately, there are many things you can do to protect yourself.</p>
+            </div>
+        </div>
+       
+        <section class = "types"><!--section where the differnt types of risks are -->
+            <h1>Signs Of Identity Theft</h1>
+            <div class = "row">
+                <div class = "types-col">
+                    <p>Unrecognized Bank or Credit Card Transactions.</p>
+                </div>
+                <div class = "types-col">
+                    <p>Unexpected Bills or Statements</p>
+                </div>
+                <div class = "types-col"><!--column 3 talks about Cyberbullying -->
+                    <p>Calls From Debt Collectors</p>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "types-col">
+                    <p>Surprise Credit Score Drops</p>
+                </div>
+                <div class = "types-col">
+                    <p>Denial of Loan or Credit Applications</p>
+                </div>
+                <div class = "types-col"><!--column 3 talks about Cyberbullying -->
+                    <p>Unusual Activity on Your Social Security Account</p>
+                </div>
+        </section>
+        <br>
+        <br>
+        <h1 style = "text-align: center; font-size: 36px;">Legal Penalties</h1>
+
+        <div class = "types-col1"><p>A misdemeanor identity theft conviction can result in up to one year in the county jail, a fine of up to $1,000, and summary probation.
+            A felony identity theft conviction can result in up to three years in jail, a fine of up to $10,000, and formal probation.
+        </p></div>
+        {% endblock %}
+    </body>
+</html>
+<script>
+$(".types-col").click(function() {
+  window.location = $(this).find("a").attr("href"); 
+  return false;
+});
+</script>
